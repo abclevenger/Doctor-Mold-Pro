@@ -104,18 +104,6 @@ export function Home() {
             </div>
           </div>
 
-          <div className="two-column" style={{ marginTop: '2rem' }}>
-            <div>
-              <img
-                src="/service-van.png"
-                alt="Doctor Mold Pro service van"
-                className="van-image"
-                loading="lazy"
-                width="360"
-                height="270"
-              />
-            </div>
-          </div>
         </section>
 
         <section id="services" className="section services">
@@ -541,6 +529,19 @@ export function Home() {
                 full documentation and a written clearance report. <strong>Most importantly</strong>, the client now feels confident in the safety of their bathroom.
               </p>
             </article>
+          </div>
+        </section>
+
+        <section className="section">
+          <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+            <img
+              src="/service-van.png"
+              alt="Doctor Mold Pro service van"
+              className="van-image"
+              loading="lazy"
+              width="600"
+              height="450"
+            />
           </div>
         </section>
 
