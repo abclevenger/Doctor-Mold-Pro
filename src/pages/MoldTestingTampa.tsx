@@ -45,6 +45,8 @@ export function MoldTestingTampa() {
     { slug: '/what-does-a-mold-inspection-include', title: 'What Does a Mold Inspection Include?' },
     { slug: '/mold-testing-cost-tampa', title: 'Mold Testing Cost in Tampa' },
     { slug: '/how-long-does-mold-testing-take', title: 'How Long Does Mold Testing Take?' },
+    { slug: '/mold-testing-clearwater', title: 'Mold Testing Clearwater' },
+    { slug: '/mold-testing-st-petersburg', title: 'Mold Testing St. Petersburg' },
   ]
 
   return (

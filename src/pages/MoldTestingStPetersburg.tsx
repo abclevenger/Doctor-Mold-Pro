@@ -20,8 +20,10 @@ export function MoldTestingStPetersburg() {
   ]
 
   const relatedPages = [
-    { slug: '/mold-testing-tampa', title: 'Mold Testing Tampa' },
     { slug: '/mold-removal-st-petersburg', title: 'Mold Removal St. Petersburg' },
+    { slug: '/mold-testing-tampa', title: 'Mold Testing Tampa' },
+    { slug: '/mold-testing-clearwater', title: 'Mold Testing Clearwater' },
+    { slug: '/signs-of-mold-in-house', title: 'Signs of Mold in House' },
     { slug: '/mold-testing-cost-tampa', title: 'Mold Testing Cost' },
   ]
 

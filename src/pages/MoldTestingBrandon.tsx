@@ -20,8 +20,10 @@ export function MoldTestingBrandon() {
   ]
 
   const relatedPages = [
-    { slug: '/mold-testing-tampa', title: 'Mold Testing Tampa' },
     { slug: '/mold-removal-brandon', title: 'Mold Removal Brandon' },
+    { slug: '/mold-testing-tampa', title: 'Mold Testing Tampa' },
+    { slug: '/mold-testing-riverview', title: 'Mold Testing Riverview' },
+    { slug: '/signs-of-mold-in-house', title: 'Signs of Mold in House' },
     { slug: '/mold-testing-cost-tampa', title: 'Mold Testing Cost' },
   ]
 

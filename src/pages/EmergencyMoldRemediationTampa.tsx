@@ -37,6 +37,8 @@ export function EmergencyMoldRemediationTampa() {
     { slug: '/mold-after-water-leak', title: 'Mold After Water Leak' },
     { slug: '/mold-after-flooding', title: 'Mold After Flooding' },
     { slug: '/mold-removal-tampa', title: 'Mold Removal Tampa' },
+    { slug: '/mold-removal-clearwater', title: 'Mold Removal Clearwater' },
+    { slug: '/mold-removal-st-petersburg', title: 'Mold Removal St. Petersburg' },
     { slug: '/mold-remediation-process', title: 'Mold Remediation Process' },
   ]
 

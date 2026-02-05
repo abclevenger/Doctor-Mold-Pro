@@ -45,6 +45,8 @@ export function MoldRemovalTampa() {
     { slug: '/is-black-mold-dangerous', title: 'Is Black Mold Dangerous?' },
     { slug: '/mold-after-water-leak', title: 'Mold After Water Leak' },
     { slug: '/does-insurance-cover-mold-florida', title: 'Does Insurance Cover Mold in Florida?' },
+    { slug: '/mold-removal-clearwater', title: 'Mold Removal Clearwater' },
+    { slug: '/mold-removal-st-petersburg', title: 'Mold Removal St. Petersburg' },
   ]
 
   return (

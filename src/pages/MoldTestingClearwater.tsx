@@ -25,10 +25,11 @@ export function MoldTestingClearwater() {
   ]
 
   const relatedPages = [
-    { slug: '/mold-testing-tampa', title: 'Mold Testing Tampa' },
     { slug: '/mold-removal-clearwater', title: 'Mold Removal Clearwater' },
+    { slug: '/mold-testing-tampa', title: 'Mold Testing Tampa' },
+    { slug: '/mold-testing-st-petersburg', title: 'Mold Testing St. Petersburg' },
+    { slug: '/signs-of-mold-in-house', title: 'Signs of Mold in House' },
     { slug: '/mold-testing-cost-tampa', title: 'Mold Testing Cost' },
-    { slug: '/what-does-a-mold-inspection-include', title: 'What Does a Mold Inspection Include?' },
   ]
 
   return (

@@ -631,8 +631,13 @@ export function Home() {
                   </a>
                 </li>
                 <li>
-                  <strong>Service area:</strong> Tampa, St. Petersburg, Clearwater, Brandon,
-                  Wesley&nbsp;Chapel, Riverview, and surrounding Tampa Bay communities.
+                  <strong>Service area:</strong> Serving{' '}
+                  <Link to="/mold-testing-tampa" style={{ color: '#7dd3fc', textDecoration: 'none' }}>Tampa</Link>,{' '}
+                  <Link to="/mold-testing-st-petersburg" style={{ color: '#7dd3fc', textDecoration: 'none' }}>St. Petersburg</Link>,{' '}
+                  <Link to="/mold-testing-clearwater" style={{ color: '#7dd3fc', textDecoration: 'none' }}>Clearwater</Link>,{' '}
+                  <Link to="/mold-testing-brandon" style={{ color: '#7dd3fc', textDecoration: 'none' }}>Brandon</Link>,{' '}
+                  <Link to="/mold-testing-riverview" style={{ color: '#7dd3fc', textDecoration: 'none' }}>Riverview</Link>,{' '}
+                  Wesley Chapel, and surrounding Tampa Bay communities.
                 </li>
                 <li>
                   <strong>Hours:</strong> 24/7 emergency response for water damage and visible mold.

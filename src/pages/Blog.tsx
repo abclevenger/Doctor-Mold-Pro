@@ -81,15 +81,31 @@ export function Blog() {
         <div style={{ marginTop: '3rem', padding: '2rem', background: 'rgba(15, 23, 42, 0.5)', borderRadius: '1rem', textAlign: 'center' }}>
           <h2>Need Professional Mold Testing or Removal?</h2>
           <p style={{ marginBottom: '1.5rem' }}>
-            Our certified team is ready to help protect your Tampa home or business from mold.
+            Our certified team is ready to help protect your Tampa Bay home or business from mold.
           </p>
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '1.5rem' }}>
             <Link to="/mold-testing-tampa" className="primary button-link">
               Schedule Testing
             </Link>
             <Link to="/mold-removal-tampa" className="secondary button-link">
               Get Removal Help
             </Link>
+          </div>
+          <div style={{ marginTop: '1.5rem', paddingTop: '1.5rem', borderTop: '1px solid rgba(148, 163, 184, 0.3)' }}>
+            <p style={{ marginBottom: '1rem', fontSize: '0.95rem', color: '#cbd5f5' }}>
+              <strong>Serving All Tampa Bay Areas:</strong>
+            </p>
+            <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap', fontSize: '0.9rem' }}>
+              <Link to="/mold-testing-tampa" style={{ color: '#7dd3fc', textDecoration: 'none' }}>Tampa</Link>
+              <span style={{ color: '#94a3b8' }}>•</span>
+              <Link to="/mold-testing-clearwater" style={{ color: '#7dd3fc', textDecoration: 'none' }}>Clearwater</Link>
+              <span style={{ color: '#94a3b8' }}>•</span>
+              <Link to="/mold-testing-st-petersburg" style={{ color: '#7dd3fc', textDecoration: 'none' }}>St. Petersburg</Link>
+              <span style={{ color: '#94a3b8' }}>•</span>
+              <Link to="/mold-testing-brandon" style={{ color: '#7dd3fc', textDecoration: 'none' }}>Brandon</Link>
+              <span style={{ color: '#94a3b8' }}>•</span>
+              <Link to="/mold-testing-riverview" style={{ color: '#7dd3fc', textDecoration: 'none' }}>Riverview</Link>
+            </div>
           </div>
         </div>
       </section>

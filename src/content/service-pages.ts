@@ -70,9 +70,10 @@ export const servicePages: SupportPageContent[] = [
     primaryCTATarget: 'testing',
     relatedPages: [
       { slug: '/mold-testing-tampa', title: 'Mold Testing Tampa' },
+      { slug: '/mold-testing-clearwater', title: 'Mold Testing Clearwater' },
+      { slug: '/mold-testing-st-petersburg', title: 'Mold Testing St. Petersburg' },
       { slug: '/what-does-a-mold-inspection-include', title: 'What Does a Mold Inspection Include?' },
       { slug: '/mold-testing-cost-tampa', title: 'Mold Testing Cost in Tampa' },
-      { slug: '/signs-of-mold-in-house', title: 'Signs of Mold in House' },
     ],
   },
   {
@@ -206,9 +207,10 @@ export const servicePages: SupportPageContent[] = [
     primaryCTATarget: 'testing',
     relatedPages: [
       { slug: '/mold-testing-tampa', title: 'Mold Testing Tampa' },
+      { slug: '/mold-testing-clearwater', title: 'Mold Testing Clearwater' },
+      { slug: '/mold-testing-st-petersburg', title: 'Mold Testing St. Petersburg' },
       { slug: '/mold-in-hvac-ac-vents', title: 'Mold in HVAC & AC Vents' },
       { slug: '/mold-smell-but-no-visible-mold', title: 'Mold Smell But No Visible Mold' },
-      { slug: '/mold-symptoms-headaches-allergies', title: 'Mold Symptoms: Headaches & Allergies' },
     ],
   },
   {
@@ -341,10 +343,11 @@ export const servicePages: SupportPageContent[] = [
     ],
     primaryCTATarget: 'testing',
     relatedPages: [
+      { slug: '/mold-testing-tampa', title: 'Mold Testing Tampa' },
+      { slug: '/mold-testing-clearwater', title: 'Mold Testing Clearwater' },
+      { slug: '/mold-testing-st-petersburg', title: 'Mold Testing St. Petersburg' },
       { slug: '/mold-after-water-leak', title: 'Mold After Water Leak' },
       { slug: '/mold-after-flooding', title: 'Mold After Flooding' },
-      { slug: '/emergency-mold-remediation-tampa', title: 'Emergency Mold Remediation' },
-      { slug: '/mold-testing-tampa', title: 'Mold Testing Tampa' },
     ],
   },
 ]

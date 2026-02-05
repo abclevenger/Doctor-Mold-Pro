@@ -15,9 +15,11 @@ export function MoldRemovalStPetersburg() {
   ]
 
   const relatedPages = [
-    { slug: '/mold-removal-tampa', title: 'Mold Removal Tampa' },
     { slug: '/mold-testing-st-petersburg', title: 'Mold Testing St. Petersburg' },
+    { slug: '/mold-removal-tampa', title: 'Mold Removal Tampa' },
+    { slug: '/mold-removal-clearwater', title: 'Mold Removal Clearwater' },
     { slug: '/mold-remediation-process', title: 'Mold Remediation Process' },
+    { slug: '/mold-removal-cost-tampa', title: 'Mold Removal Cost' },
   ]
 
   return (
