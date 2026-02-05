@@ -319,15 +319,25 @@ export function Home() {
           </p>
         </section>
 
-        <section className="section" id="certifications">
+        <section className="section certifications-section" id="certifications">
           <h2>Certified Mold Experts &amp; Accreditations</h2>
           <p className="section-lead">
             Doctor Mold Pro is backed by industry‑leading training, state licensing, and
             third‑party certifications—so you know your home or business is in qualified hands.
           </p>
 
-          <div className="grid">
-            <article className="card">
+          <div className="certifications-grid">
+            <article className="certification-card">
+              <div className="certification-logo">
+                <svg width="180" height="60" viewBox="0 0 180 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="0" y="0" width="180" height="60" rx="4" fill="rgba(15, 23, 42, 0.8)" />
+                  <circle cx="30" cy="30" r="22" stroke="#3b82f6" strokeWidth="2.5" fill="rgba(59, 130, 246, 0.1)" />
+                  <path d="M15 30 Q22 20, 30 30 Q38 40, 45 30" stroke="#34d399" strokeWidth="2" fill="none" strokeLinecap="round" />
+                  <path d="M18 32 Q25 22, 33 32 Q41 42, 48 32" stroke="#a78bfa" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+                  <text x="60" y="25" fontFamily="Arial, sans-serif" fontSize="20" fontWeight="700" fill="#3b82f6" letterSpacing="2">NORMI</text>
+                  <text x="60" y="42" fontFamily="Arial, sans-serif" fontSize="8" fill="#94a3b8" letterSpacing="1">NATIONAL ORGANIZATION</text>
+                </svg>
+              </div>
               <h3>N.O.R.M.I. Mold Assessor</h3>
               <p>
                 Accredited certification from the National Organization of Remediators &amp;
@@ -335,64 +345,122 @@ export function Home() {
                 commercial structures.
               </p>
             </article>
-            <article className="card">
+            <article className="certification-card">
+              <div className="certification-logo">
+                <svg width="180" height="60" viewBox="0 0 180 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="0" y="0" width="180" height="60" rx="4" fill="rgba(15, 23, 42, 0.8)" />
+                  <circle cx="30" cy="30" r="22" stroke="#3b82f6" strokeWidth="2.5" fill="rgba(59, 130, 246, 0.1)" />
+                  <path d="M15 30 Q22 20, 30 30 Q38 40, 45 30" stroke="#34d399" strokeWidth="2" fill="none" strokeLinecap="round" />
+                  <path d="M18 32 Q25 22, 33 32 Q41 42, 48 32" stroke="#a78bfa" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+                  <text x="60" y="25" fontFamily="Arial, sans-serif" fontSize="20" fontWeight="700" fill="#3b82f6" letterSpacing="2">NORMI</text>
+                  <text x="60" y="42" fontFamily="Arial, sans-serif" fontSize="8" fill="#94a3b8" letterSpacing="1">NATIONAL ORGANIZATION</text>
+                </svg>
+              </div>
               <h3>N.O.R.M.I. Mold Remediator</h3>
               <p>
                 Certified to perform all remediation procedures and protocols per N.O.R.M.I.
                 guidelines and standards to return properties to pre‑loss condition.
               </p>
             </article>
-            <article className="card">
+            <article className="certification-card">
+              <div className="certification-logo">
+                <svg width="180" height="60" viewBox="0 0 180 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="0" y="0" width="180" height="60" rx="4" fill="rgba(15, 23, 42, 0.8)" />
+                  <defs>
+                    <radialGradient id="iicrcGradient" cx="50%" cy="30%">
+                      <stop offset="0%" stopColor="#06b6d4" />
+                      <stop offset="50%" stopColor="#10b981" />
+                      <stop offset="100%" stopColor="#84cc16" />
+                    </radialGradient>
+                  </defs>
+                  <circle cx="30" cy="30" r="22" fill="url(#iicrcGradient)" />
+                  <circle cx="30" cy="25" r="2" fill="rgba(255, 255, 255, 0.9)" />
+                  <circle cx="25" cy="28" r="1.5" fill="rgba(255, 255, 255, 0.8)" />
+                  <circle cx="35" cy="28" r="1.5" fill="rgba(255, 255, 255, 0.8)" />
+                  <circle cx="22" cy="32" r="1.5" fill="rgba(255, 255, 255, 0.8)" />
+                  <circle cx="38" cy="32" r="1.5" fill="rgba(255, 255, 255, 0.8)" />
+                  <circle cx="28" cy="35" r="1.5" fill="rgba(255, 255, 255, 0.7)" />
+                  <circle cx="32" cy="35" r="1.5" fill="rgba(255, 255, 255, 0.7)" />
+                  <circle cx="30" cy="38" r="1" fill="rgba(255, 255, 255, 0.6)" />
+                  <text x="60" y="25" fontFamily="Arial, sans-serif" fontSize="18" fontWeight="700" fill="#06b6d4" letterSpacing="3">IICRC</text>
+                  <text x="60" y="42" fontFamily="Arial, sans-serif" fontSize="7" fill="#94a3b8">INSTITUTE OF INSPECTION</text>
+                </svg>
+              </div>
               <h3>Applied Microbial Remediation</h3>
               <p>
                 Continuing education through IICRC‑aligned training to handle microbial
                 amplification and complex contamination scenarios with confidence.
               </p>
             </article>
-            <article className="card">
+            <article className="certification-card">
+              <div className="certification-logo">
+                <svg width="180" height="60" viewBox="0 0 180 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="0" y="0" width="180" height="60" rx="4" fill="rgba(15, 23, 42, 0.8)" />
+                  <defs>
+                    <radialGradient id="iicrcGradient2" cx="50%" cy="30%">
+                      <stop offset="0%" stopColor="#06b6d4" />
+                      <stop offset="50%" stopColor="#10b981" />
+                      <stop offset="100%" stopColor="#84cc16" />
+                    </radialGradient>
+                  </defs>
+                  <circle cx="30" cy="30" r="22" fill="url(#iicrcGradient2)" />
+                  <circle cx="30" cy="25" r="2" fill="rgba(255, 255, 255, 0.9)" />
+                  <circle cx="25" cy="28" r="1.5" fill="rgba(255, 255, 255, 0.8)" />
+                  <circle cx="35" cy="28" r="1.5" fill="rgba(255, 255, 255, 0.8)" />
+                  <circle cx="22" cy="32" r="1.5" fill="rgba(255, 255, 255, 0.8)" />
+                  <circle cx="38" cy="32" r="1.5" fill="rgba(255, 255, 255, 0.8)" />
+                  <circle cx="28" cy="35" r="1.5" fill="rgba(255, 255, 255, 0.7)" />
+                  <circle cx="32" cy="35" r="1.5" fill="rgba(255, 255, 255, 0.7)" />
+                  <circle cx="30" cy="38" r="1" fill="rgba(255, 255, 255, 0.6)" />
+                  <text x="60" y="25" fontFamily="Arial, sans-serif" fontSize="18" fontWeight="700" fill="#06b6d4" letterSpacing="3">IICRC</text>
+                  <text x="60" y="42" fontFamily="Arial, sans-serif" fontSize="7" fill="#94a3b8">INSTITUTE OF INSPECTION</text>
+                </svg>
+              </div>
               <h3>I.I.C.R.C. Certifications</h3>
               <p>
                 Certified in water damage restoration, fire, smoke &amp; odor, and applied
                 microbial remediation—ensuring every project follows proven restoration protocols.
               </p>
             </article>
-            <article className="card">
+            <article className="certification-card">
+              <div className="certification-logo">
+                <svg width="180" height="60" viewBox="0 0 180 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="0" y="0" width="180" height="60" rx="4" fill="rgba(15, 23, 42, 0.8)" />
+                  <circle cx="30" cy="30" r="22" stroke="#3b82f6" strokeWidth="2" fill="rgba(59, 130, 246, 0.1)" />
+                  <circle cx="30" cy="20" r="8" fill="#fbbf24" />
+                  <path d="M20 35 Q25 30, 30 35 Q35 40, 40 35" stroke="#3b82f6" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+                  <path d="M18 38 Q23 33, 28 38 Q33 43, 38 38" stroke="#60a5fa" strokeWidth="2" fill="none" strokeLinecap="round" />
+                  <path d="M22 42 Q27 37, 32 42" stroke="#93c5fd" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+                  <path d="M25 40 L27 38 L29 40 L31 38 L33 40" stroke="#34d399" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+                  <text x="60" y="22" fontFamily="Arial, sans-serif" fontSize="10" fill="#94a3b8" fontWeight="600">FLORIDA</text>
+                  <text x="60" y="35" fontFamily="Arial, sans-serif" fontSize="16" fontWeight="700" fill="#3b82f6" letterSpacing="1">dbpr</text>
+                  <text x="60" y="48" fontFamily="Arial, sans-serif" fontSize="7" fill="#94a3b8">DEPARTMENT OF BUSINESS</text>
+                </svg>
+              </div>
               <h3>Florida DBPR Licensing</h3>
               <p>
                 Licensed Mold Assessor (MRSA4767) and Mold Remediator (MRSR4762) under Florida&apos;s
                 mold‑related services program for both residential and commercial work.
               </p>
             </article>
-            <article className="card">
-              <h3>Veteran‑Owned Integrity</h3>
-              <p>
-                A veteran‑owned business committed to disciplined processes, clear communication,
-                and doing the job right the first time.
-              </p>
-            </article>
-            <article className="card">
-              <h3>BBB Accredited Business</h3>
-              <p>
-                A‑rated by the Better Business Bureau, demonstrating our commitment to ethical
-                business practices, customer satisfaction, and marketplace trust.
-              </p>
-              <p style={{ marginTop: '0.75rem' }}>
-                <a
-                  href="https://www.bbb.org/us/fl/tampa/profile/mold-testing/doctor-mold-pro-llc-0653-90453165#bbbonlineclick"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: '#7dd3fc', textDecoration: 'underline' }}
-                >
-                  View our BBB profile →
-                </a>
-              </p>
-            </article>
           </div>
 
-          <div style={{ marginTop: '2.5rem', textAlign: 'center' }}>
-            <p style={{ marginBottom: '0.75rem', fontWeight: 500 }}>
-              Free Mold Prevention Guide (PDF)
-            </p>
+          <div className="bbb-seal-container">
+            <a
+              href="https://www.bbb.org/us/fl/tampa/profile/mold-testing/doctor-mold-pro-llc-0653-90453165/#sealclick"
+              target="_blank"
+              rel="nofollow"
+            >
+              <img
+                src="https://seal-westflorida.bbb.org/seals/blue-seal-200-42-bbb-90453165.png"
+                style={{ border: 0 }}
+                alt="Doctor Mold Pro LLC BBB Business Review"
+              />
+            </a>
+          </div>
+
+          <div className="certifications-cta">
+            <p className="certifications-cta-label">Free Mold Prevention Guide (PDF)</p>
             <a
               href="/Guide.pdf"
               download
