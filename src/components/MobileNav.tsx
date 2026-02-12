@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { trackEvent } from '../utils/analytics'
 
 export function MobileNav() {
   const [isOpen, setIsOpen] = useState(false)
@@ -62,8 +63,19 @@ export function MobileNav() {
           <Link to="/#faq" onClick={handleLinkClick}>
             FAQ
           </Link>
-          <Link to="/#contact" className="mobile-nav-cta" onClick={handleLinkClick}>
-            Contact
+          <Link
+            to="/mold-testing-appointment"
+            className="mobile-nav-cta"
+            onClick={() => {
+              trackEvent({
+                category: 'CTA',
+                action: 'click_mobile_nav_book_online',
+                label: 'Mobile nav',
+              })
+              handleLinkClick()
+            }}
+          >
+            Book Online
           </Link>
         </div>
       </nav>

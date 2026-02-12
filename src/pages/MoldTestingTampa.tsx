@@ -2,8 +2,10 @@ import { PageMeta } from '../components/PageMeta'
 import { Breadcrumbs } from '../components/Breadcrumbs'
 import { FAQAccordion } from '../components/FAQAccordion'
 import { RelatedPages } from '../components/RelatedPages'
+import { BeforeAfterGallery } from '../components/BeforeAfterGallery'
 import { getCanonicalUrl } from '../config/seo'
 import { Link } from 'react-router-dom'
+import { trackEvent } from '../utils/analytics'
 
 export function MoldTestingTampa() {
   const faqs = [
@@ -177,6 +179,26 @@ export function MoldTestingTampa() {
           </section>
         </div>
 
+        <BeforeAfterGallery
+          heading="Before & After: Mold Testing and Remediation"
+          items={[
+            {
+              title: 'South Tampa Living Room',
+              description:
+                'Hidden mold behind baseboards discovered through moisture mapping and air sampling, followed by targeted remediation.',
+              beforeImage: '/gallery/living-room-before.jpg',
+              afterImage: '/gallery/living-room-after.jpg',
+            },
+            {
+              title: 'Carrollwood Bathroom Leak',
+              description:
+                'Post-flood mold testing and clearance after emergency remediation of a burst pipe under the vanity.',
+              beforeImage: '/gallery/bathroom-before.jpg',
+              afterImage: '/gallery/bathroom-after.jpg',
+            },
+          ]}
+        />
+
         <section className="section faq-section">
           <h2>Frequently Asked Questions About Mold Testing in Tampa</h2>
           <FAQAccordion faqs={faqs} />
@@ -186,21 +208,49 @@ export function MoldTestingTampa() {
           <div className="cta-section-inner">
             <h2>Ready to Schedule Your Mold Testing?</h2>
             <p>
-              Don\'t wait until mold becomes a bigger problem. Professional testing provides the
+              Don&apos;t wait until mold becomes a bigger problem. Professional testing provides the
               information you need to protect your health and property. Our certified inspectors are
               ready to help.
             </p>
             <div className="cta-buttons">
-              <a href="tel:8137765200" className="primary button-link">
+              <a
+                href="tel:8137765200"
+                className="primary button-link"
+                onClick={() =>
+                  trackEvent({
+                    category: 'CTA',
+                    action: 'click_testing_call',
+                    label: 'MoldTestingTampa CTA',
+                  })
+                }
+              >
                 Call (813) 776-5200
               </a>
-              <Link to="/#contact" className="secondary button-link">
-                Request a Consultation
+              <Link
+                to="/mold-testing-appointment"
+                className="secondary button-link"
+                onClick={() =>
+                  trackEvent({
+                    category: 'CTA',
+                    action: 'click_testing_book_online',
+                    label: 'MoldTestingTampa CTA',
+                  })
+                }
+              >
+                Book Mold Testing Online
               </Link>
             </div>
             <p className="cta-note">
               <strong>24/7 Emergency Service:</strong> Available for urgent mold concerns and water
-              damage situations.
+              damage situations. For non-emergencies, you can also compare our{' '}
+              <Link to="/price-packages" style={{ color: '#7dd3fc' }}>
+                price packages
+              </Link>{' '}
+              or read about our{' '}
+              <Link to="/mold-remediation-process" style={{ color: '#7dd3fc' }}>
+                remediation process
+              </Link>
+              .
             </p>
           </div>
         </section>

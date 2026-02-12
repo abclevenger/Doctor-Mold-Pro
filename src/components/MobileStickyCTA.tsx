@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { trackEvent } from '../utils/analytics'
 
 export function MobileStickyCTA() {
   const [isVisible, setIsVisible] = useState(false)
@@ -57,7 +58,17 @@ export function MobileStickyCTA() {
         ×
       </button>
       <div className="mobile-sticky-cta-content">
-        <a href="tel:8137765200" className="mobile-sticky-cta-button primary">
+        <a
+          href="tel:8137765200"
+          className="mobile-sticky-cta-button primary"
+          onClick={() =>
+            trackEvent({
+              category: 'CTA',
+              action: 'click_mobile_sticky_call',
+              label: 'Mobile sticky bar',
+            })
+          }
+        >
           <svg
             width="20"
             height="20"
@@ -72,7 +83,17 @@ export function MobileStickyCTA() {
           </svg>
           Call Now
         </a>
-        <a href="#contact" className="mobile-sticky-cta-button secondary">
+        <a
+          href="/mold-testing-appointment"
+          className="mobile-sticky-cta-button secondary"
+          onClick={() =>
+            trackEvent({
+              category: 'CTA',
+              action: 'click_mobile_sticky_book_online',
+              label: 'Mobile sticky bar',
+            })
+          }
+        >
           <svg
             width="20"
             height="20"
@@ -85,7 +106,7 @@ export function MobileStickyCTA() {
           >
             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
           </svg>
-          Get Quote
+          Book Online
         </a>
       </div>
     </div>

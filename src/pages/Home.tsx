@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { PageMeta } from '../components/PageMeta'
 import { getCanonicalUrl } from '../config/seo'
 import { ContactForm } from '../components/ContactForm'
+import { trackEvent } from '../utils/analytics'
 
 export function Home() {
   return (
@@ -21,10 +22,30 @@ export function Home() {
                 and businesses.
               </p>
               <div className="hero-actions">
-                <Link to="/#contact" className="primary button-link">
+                <Link
+                  to="/mold-testing-appointment"
+                  className="primary button-link"
+                  onClick={() =>
+                    trackEvent({
+                      category: 'CTA',
+                      action: 'click_hero_schedule_consultation',
+                      label: 'Home hero',
+                    })
+                  }
+                >
                   Schedule a Consultation
                 </Link>
-                <a href="tel:8137765200" className="secondary button-link">
+                <a
+                  href="tel:8137765200"
+                  className="secondary button-link"
+                  onClick={() =>
+                    trackEvent({
+                      category: 'CTA',
+                      action: 'click_hero_call_now',
+                      label: 'Home hero',
+                    })
+                  }
+                >
                   Call Now
                 </a>
               </div>
@@ -35,6 +56,7 @@ export function Home() {
                   <span className="badge-stars">★★★★★</span>
                 </div>
                 <p className="badge-note">Fully backed by Google Guarantee</p>
+                <p className="badge-note">Licensed MRSA4767 / MRSR4762 • NORMI &amp; IICRC Certified</p>
                 <div className="veteran-badge">
                   <img
                     src="/veteran-owned-badge.png"
@@ -202,7 +224,7 @@ export function Home() {
                 <li>Detailed digital report within 48 hours</li>
                 <li>Expert consultation on findings</li>
               </ul>
-              <Link to="/#contact" className="primary pricing-cta button-link">
+              <Link to="/mold-testing-appointment" className="primary pricing-cta button-link">
                 Get Started
               </Link>
             </article>
@@ -224,7 +246,7 @@ export function Home() {
                 <li>30-day follow-up consultation</li>
                 <li>Remediation protocol if mold detected</li>
               </ul>
-              <Link to="/#contact" className="primary pricing-cta button-link">
+              <Link to="/mold-testing-appointment" className="primary pricing-cta button-link">
                 Get Started
               </Link>
             </article>
@@ -242,7 +264,7 @@ export function Home() {
                 <li>Priority same-day service</li>
                 <li>1-year mold prevention consultation</li>
               </ul>
-              <Link to="/#contact" className="primary pricing-cta button-link">
+              <Link to="/mold-testing-appointment" className="primary pricing-cta button-link">
                 Get Started
               </Link>
             </article>

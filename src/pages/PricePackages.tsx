@@ -27,7 +27,7 @@ export function PricePackages() {
               <li>Basic written report</li>
               <li>Recommendations for next steps</li>
             </ul>
-            <Link to="/#contact" className="primary pricing-cta button-link">
+            <Link to="/mold-testing-appointment" className="primary pricing-cta button-link">
               Schedule Inspection
             </Link>
           </div>
@@ -45,7 +45,7 @@ export function PricePackages() {
               <li>Detailed written report</li>
               <li>Remediation recommendations</li>
             </ul>
-            <Link to="/#contact" className="primary pricing-cta button-link">
+            <Link to="/mold-testing-appointment" className="primary pricing-cta button-link">
               Schedule Testing
             </Link>
           </div>
@@ -62,7 +62,7 @@ export function PricePackages() {
               <li>Post-remediation verification included</li>
               <li>Priority scheduling</li>
             </ul>
-            <Link to="/#contact" className="primary pricing-cta button-link">
+            <Link to="/mold-testing-appointment" className="primary pricing-cta button-link">
               Schedule Premium Testing
             </Link>
           </div>
@@ -91,7 +91,7 @@ export function PricePackages() {
             Every mold situation is unique. Contact us for a free consultation and detailed quote tailored to your specific needs.
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link to="/#contact" className="primary button-link">
+            <Link to="/mold-testing-appointment" className="primary button-link">
               Request Free Quote
             </Link>
             <a href="tel:8137765200" className="secondary button-link">

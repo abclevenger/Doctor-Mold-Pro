@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
+import { trackEvent } from '../utils/analytics'
 import { MobileStickyCTA } from './MobileStickyCTA'
 import { MobileNav } from './MobileNav'
 import { BackToTop } from './BackToTop'
@@ -35,8 +36,18 @@ export function Layout({ children }: LayoutProps) {
           <Link to="/price-packages">Price Packages</Link>
           <Link to="/blog">Blog</Link>
           <Link to="/#faq">FAQ</Link>
-          <Link to="/#contact" className="nav-cta">
-            Contact
+          <Link
+            to="/mold-testing-appointment"
+            className="nav-cta"
+            onClick={() =>
+              trackEvent({
+                category: 'CTA',
+                action: 'click_nav_book_online',
+                label: 'Desktop nav',
+              })
+            }
+          >
+            Book Online
           </Link>
         </nav>
         <MobileNav />
@@ -96,6 +107,20 @@ export function Layout({ children }: LayoutProps) {
               </li>
               <li>
                 <Link to="/#faq">FAQs</Link>
+              </li>
+              <li>
+                <Link
+                  to="/mold-testing-appointment"
+                  onClick={() =>
+                    trackEvent({
+                      category: 'CTA',
+                      action: 'click_footer_book_online',
+                      label: 'Footer',
+                    })
+                  }
+                >
+                  Book Online
+                </Link>
               </li>
             </ul>
           </div>

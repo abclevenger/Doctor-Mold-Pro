@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { PageMeta } from '../components/PageMeta'
 import { getCanonicalUrl } from '../config/seo'
+import { trackEvent } from '../utils/analytics'
 
 export function Blog() {
   return (
@@ -84,14 +85,52 @@ export function Blog() {
             Our certified team is ready to help protect your Tampa Bay home or business from mold.
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '1.5rem' }}>
-            <Link to="/mold-testing-tampa" className="primary button-link">
-              Schedule Testing
+            <Link
+              to="/mold-testing-appointment"
+              className="primary button-link"
+              onClick={() =>
+                trackEvent({
+                  category: 'CTA',
+                  action: 'click_blog_book_online',
+                  label: 'Blog CTA',
+                })
+              }
+            >
+              Book Online in Minutes
             </Link>
-            <Link to="/mold-removal-tampa" className="secondary button-link">
-              Get Removal Help
-            </Link>
+            <a
+              href="tel:8137765200"
+              className="secondary button-link"
+              onClick={() =>
+                trackEvent({
+                  category: 'CTA',
+                  action: 'click_blog_call',
+                  label: 'Blog CTA',
+                })
+              }
+            >
+              Call (813) 776-5200
+            </a>
           </div>
           <div style={{ marginTop: '1.5rem', paddingTop: '1.5rem', borderTop: '1px solid rgba(148, 163, 184, 0.3)' }}>
+            <p style={{ marginBottom: '0.75rem', fontSize: '0.95rem', color: '#cbd5f5' }}>
+              Prefer a step-by-step guide? You can also{' '}
+              <a
+                href="/Guide.pdf"
+                download
+                style={{ color: '#7dd3fc' }}
+                onClick={() =>
+                  trackEvent({
+                    category: 'Asset',
+                    action: 'download_guide_pdf',
+                    label: 'Blog footer',
+                  })
+                }
+              >
+                download our free Mold Prevention Guide (PDF)
+              </a>
+              .
+            </p>
             <p style={{ marginBottom: '1rem', fontSize: '0.95rem', color: '#cbd5f5' }}>
               <strong>Serving All Tampa Bay Areas:</strong>
             </p>

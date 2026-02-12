@@ -174,6 +174,9 @@ export function EmergencyMoldRemediationTampa() {
               <a href="tel:8137765200" className="primary button-link" style={{ fontSize: '1.1rem', padding: '1rem 2rem' }}>
                 Call Now: (813) 776-5200
               </a>
+              <a href="/mold-testing-appointment" className="secondary button-link">
+                Schedule Emergency Visit
+              </a>
             </div>
             <p className="cta-note">
               <strong>Available 24/7:</strong> We respond to emergencies day or night, weekends and

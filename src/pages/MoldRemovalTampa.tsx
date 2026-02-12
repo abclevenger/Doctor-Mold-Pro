@@ -2,6 +2,7 @@ import { PageMeta } from '../components/PageMeta'
 import { Breadcrumbs } from '../components/Breadcrumbs'
 import { FAQAccordion } from '../components/FAQAccordion'
 import { RelatedPages } from '../components/RelatedPages'
+import { BeforeAfterGallery } from '../components/BeforeAfterGallery'
 import { getCanonicalUrl } from '../config/seo'
 import { Link } from 'react-router-dom'
 
@@ -166,6 +167,25 @@ export function MoldRemovalTampa() {
           </section>
         </div>
 
+        <BeforeAfterGallery
+          items={[
+            {
+              title: 'Downtown Tampa Office Wall',
+              description:
+                'Black mold behind a leaking break-room wall removed under full containment with HEPA filtration and clearance testing.',
+              beforeImage: '/gallery/office-wall-before.jpg',
+              afterImage: '/gallery/office-wall-after.jpg',
+            },
+            {
+              title: 'South Tampa Townhome Ceiling',
+              description:
+                'Toilet supply-line leak caused ceiling mold; damaged materials removed and the area restored to a clean, mold-free finish.',
+              beforeImage: '/gallery/ceiling-before.jpg',
+              afterImage: '/gallery/ceiling-after.jpg',
+            },
+          ]}
+        />
+
         <section className="section faq-section">
           <h2>Frequently Asked Questions About Mold Removal in Tampa</h2>
           <FAQAccordion faqs={faqs} />
@@ -182,8 +202,8 @@ export function MoldRemovalTampa() {
               <a href="tel:8137765200" className="primary button-link">
                 Call (813) 776-5200
               </a>
-              <Link to="/#contact" className="secondary button-link">
-                Request a Consultation
+              <Link to="/mold-testing-appointment" className="secondary button-link">
+                Book Mold Removal Online
               </Link>
             </div>
             <p className="cta-note">

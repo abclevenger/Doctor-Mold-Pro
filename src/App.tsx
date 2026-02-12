@@ -24,6 +24,7 @@ import { PricePackages } from './pages/PricePackages'
 import { Certifications } from './pages/Certifications'
 import { Terms } from './pages/Terms'
 import { SchemaMarkup } from './components/SchemaMarkup'
+import { MoldTestingAppointment } from './pages/MoldTestingAppointment'
 
 function App() {
   useEffect(() => {
@@ -80,6 +81,7 @@ function App() {
           <Route path="/price-packages" element={<PricePackages />} />
           <Route path="/certifications" element={<Certifications />} />
           <Route path="/terms" element={<Terms />} />
+          <Route path="/mold-testing-appointment" element={<MoldTestingAppointment />} />
           {/* Support pages - dynamic route (must be last) */}
           <Route path="/:slug" element={<SupportPage />} />
           {/* 404 - catch all */}
