@@ -27,6 +27,7 @@ const Certifications = lazy(() => import('./pages/Certifications'))
 const Terms = lazy(() => import('./pages/Terms'))
 const Privacy = lazy(() => import('./pages/Privacy'))
 const SmsCompliance = lazy(() => import('./pages/SmsCompliance'))
+const Accessibility = lazy(() => import('./pages/Accessibility'))
 import { SchemaMarkup } from './components/SchemaMarkup'
 
 // Simple loading fallback for lazy routes
@@ -179,6 +180,14 @@ function App() {
             element={
               <Suspense fallback={<PageLoading />}>
                 <SmsCompliance />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/accessibility"
+            element={
+              <Suspense fallback={<PageLoading />}>
+                <Accessibility />
               </Suspense>
             }
           />

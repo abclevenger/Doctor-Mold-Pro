@@ -82,6 +82,9 @@ export function Layout({ children }: LayoutProps) {
                 <Link to="/sms-terms">SMS Terms &amp; Alerts</Link>
               </li>
               <li>
+                <Link to="/accessibility">Accessibility</Link>
+              </li>
+              <li>
                 <Link to="/blog">Blog</Link>
               </li>
             </ul>
