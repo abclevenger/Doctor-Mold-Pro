@@ -3,7 +3,7 @@ import { PageMeta } from '../components/PageMeta'
 import { getCanonicalUrl } from '../config/seo'
 import { trackEvent } from '../utils/analytics'
 
-export function Blog() {
+function Blog() {
   return (
     <>
       <PageMeta
@@ -151,3 +151,5 @@ export function Blog() {
     </>
   )
 }
+
+export default Blog

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { PageMeta } from '../components/PageMeta'
 import { getCanonicalUrl } from '../config/seo'
 
-export function PricePackages() {
+function PricePackages() {
   return (
     <>
       <PageMeta
@@ -103,3 +103,5 @@ export function PricePackages() {
     </>
   )
 }
+
+export default PricePackages

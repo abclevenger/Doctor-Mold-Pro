@@ -2,7 +2,7 @@ import { useLocation, Navigate } from 'react-router-dom'
 import { SEOPage } from '../components/SEOPage'
 import { getServicePageBySlug } from '../content/service-pages'
 
-export function ServicePage() {
+function ServicePage() {
   const location = useLocation()
   const pageContent = getServicePageBySlug(location.pathname)
 
@@ -19,3 +19,5 @@ export function ServicePage() {
 
   return <SEOPage {...pageContent} breadcrumbs={breadcrumbs} />
 }
+
+export default ServicePage

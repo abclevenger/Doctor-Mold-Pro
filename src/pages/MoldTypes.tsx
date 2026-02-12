@@ -4,7 +4,7 @@ import { RelatedPages } from '../components/RelatedPages'
 import { getCanonicalUrl } from '../config/seo'
 import { Link } from 'react-router-dom'
 
-export function MoldTypes() {
+function MoldTypes() {
   const moldTypes = [
     {
       slug: '/mold-types/aspergillus',
@@ -151,3 +151,5 @@ export function MoldTypes() {
     </>
   )
 }
+
+export default MoldTypes

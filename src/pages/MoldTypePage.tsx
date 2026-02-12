@@ -2,7 +2,7 @@ import { useParams, Navigate } from 'react-router-dom'
 import { SEOPage } from '../components/SEOPage'
 import { getMoldTypePageBySlug } from '../content/mold-types'
 
-export function MoldTypePage() {
+function MoldTypePage() {
   const { type } = useParams<{ type: string }>()
   
   if (!type) {
@@ -24,3 +24,5 @@ export function MoldTypePage() {
 
   return <SEOPage {...pageContent} breadcrumbs={breadcrumbs} />
 }
+
+export default MoldTypePage

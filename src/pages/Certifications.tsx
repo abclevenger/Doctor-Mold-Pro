@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { PageMeta } from '../components/PageMeta'
 import { getCanonicalUrl } from '../config/seo'
 
-export function Certifications() {
+function Certifications() {
   return (
     <>
       <PageMeta
@@ -132,3 +132,5 @@ export function Certifications() {
     </>
   )
 }
+
+export default Certifications

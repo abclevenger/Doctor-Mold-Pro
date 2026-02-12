@@ -1,7 +1,7 @@
 import { PageMeta } from '../components/PageMeta'
 import { getCanonicalUrl } from '../config/seo'
 
-export function Terms() {
+function Terms() {
   return (
     <>
       <PageMeta
@@ -104,3 +104,5 @@ export function Terms() {
     </>
   )
 }
+
+export default Terms

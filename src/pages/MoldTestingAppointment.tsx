@@ -4,13 +4,41 @@ import { getCanonicalUrl } from '../config/seo'
 
 export function MoldTestingAppointment() {
   useEffect(() => {
-    const script = document.createElement('script')
-    script.src = 'https://link.ymbs.pro/js/form_embed.js'
-    script.async = true
-    document.body.appendChild(script)
+    // Defer booking widget script until after initial paint to improve LCP
+    // Load after a short delay or when user interacts with the page
+    let scriptLoaded = false
+    const loadScript = () => {
+      if (scriptLoaded) return
+      scriptLoaded = true
+      const script = document.createElement('script')
+      script.src = 'https://link.ymbs.pro/js/form_embed.js'
+      script.async = true
+      document.body.appendChild(script)
+    }
+
+    // Load script after initial paint (3s delay) or on user interaction
+    const timeoutId = setTimeout(loadScript, 3000)
+    
+    const events = ['scroll', 'touchstart', 'mousemove', 'keydown']
+    const loadOnInteraction = () => {
+      loadScript()
+      events.forEach((event) => {
+        window.removeEventListener(event, loadOnInteraction)
+      })
+    }
+    events.forEach((event) => {
+      window.addEventListener(event, loadOnInteraction, { once: true, passive: true })
+    })
 
     return () => {
-      document.body.removeChild(script)
+      clearTimeout(timeoutId)
+      events.forEach((event) => {
+        window.removeEventListener(event, loadOnInteraction)
+      })
+      const script = document.body.querySelector('script[src="https://link.ymbs.pro/js/form_embed.js"]')
+      if (script) {
+        document.body.removeChild(script)
+      }
     }
   }, [])
 

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { PageMeta } from '../components/PageMeta'
 import { getCanonicalUrl } from '../config/seo'
 
-export function NotFound() {
+function NotFound() {
   return (
     <>
       <PageMeta
@@ -55,3 +55,5 @@ export function NotFound() {
     </>
   )
 }
+
+export default NotFound

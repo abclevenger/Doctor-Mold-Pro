@@ -19,14 +19,18 @@ export function Layout({ children }: LayoutProps) {
       <header className="site-header">
         <div className="brand">
           <Link to="/">
-            <img
-              src="/FinalLogo_Transparent_DrMoldPro.png"
-              alt="Doctor Mold Pro - Certified Mold Testing & Removal in Tampa, FL"
-              className="brand-logo"
-              width="200"
-              height="56"
-              loading="eager"
-            />
+            <picture>
+              <source src="/FinalLogo_Transparent_DrMoldPro.webp" type="image/webp" />
+              <img
+                src="/FinalLogo_Transparent_DrMoldPro.png"
+                alt="Doctor Mold Pro - Certified Mold Testing & Removal in Tampa, FL"
+                className="brand-logo"
+                width="200"
+                height="56"
+                loading="eager"
+                fetchPriority="high"
+              />
+            </picture>
           </Link>
         </div>
         <nav className="nav">
@@ -70,6 +74,12 @@ export function Layout({ children }: LayoutProps) {
               </li>
               <li>
                 <Link to="/terms">Terms & Condition</Link>
+              </li>
+              <li>
+                <Link to="/privacy-policy">Privacy Policy</Link>
+              </li>
+              <li>
+                <Link to="/sms-terms">SMS Terms &amp; Alerts</Link>
               </li>
               <li>
                 <Link to="/blog">Blog</Link>
