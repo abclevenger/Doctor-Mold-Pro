@@ -3,6 +3,7 @@ import { PageMeta } from '../components/PageMeta'
 import { getCanonicalUrl } from '../config/seo'
 import { businessConfig } from '../config/business'
 import { ContactForm } from '../components/ContactForm'
+import { GoogleMapEmbed } from '../components/GoogleMapEmbed'
 import { TrustBar } from '../components/TrustBar'
 import { trackEvent } from '../utils/analytics'
 
@@ -872,6 +873,7 @@ export function Home() {
                   </a>
                 </li>
               </ul>
+              <GoogleMapEmbed />
               <p className="service-areas">
                 <strong>Prefer email?</strong> Use the form—include your ZIP and whether there&apos;s active
                 water. We&apos;ll call or email back fast.

@@ -29,6 +29,11 @@ export const businessConfig = {
     latitude: 27.9582,
     longitude: -82.4995,
   },
+
+  /** Google Maps embed (CID place map) */
+  googleMaps: {
+    embedUrl: 'https://maps.google.com/maps?cid=7551578605646135850&output=embed',
+  },
   
   // Business Hours (TODO: Verify actual hours)
   hours: {
