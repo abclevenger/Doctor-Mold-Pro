@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import { trackEvent } from '../utils/analytics'
+import { businessConfig } from '../config/business'
 import { MobileStickyCTA } from './MobileStickyCTA'
 import { MobileNav } from './MobileNav'
 import { BackToTop } from './BackToTop'
@@ -34,12 +35,26 @@ export function Layout({ children }: LayoutProps) {
           </Link>
         </div>
         <nav className="nav">
+          <Link to="/">Home</Link>
           <Link to="/#services">Services</Link>
           <Link to="/mold-testing-tampa">Testing</Link>
           <Link to="/mold-removal-tampa">Removal</Link>
           <Link to="/price-packages">Price Packages</Link>
           <Link to="/blog">Blog</Link>
           <Link to="/#faq">FAQ</Link>
+          <a
+            href={`tel:${businessConfig.phone.tel}`}
+            className="nav-phone"
+            onClick={() =>
+              trackEvent({
+                category: 'CTA',
+                action: 'click_header_phone',
+                label: 'Desktop nav',
+              })
+            }
+          >
+            {businessConfig.phone.display}
+          </a>
           <Link
             to="/mold-testing-appointment"
             className="nav-cta"
@@ -122,6 +137,9 @@ export function Layout({ children }: LayoutProps) {
                 <Link to="/#faq">FAQs</Link>
               </li>
               <li>
+                <Link to="/#service-areas">Service areas</Link>
+              </li>
+              <li>
                 <Link
                   to="/mold-testing-appointment"
                   onClick={() =>
@@ -176,6 +194,15 @@ export function Layout({ children }: LayoutProps) {
             </div>
           </div>
         </div>
+        <p className="footer-address">
+          <a
+            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(businessConfig.address.line)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {businessConfig.address.line}
+          </a>
+        </p>
         <p className="footer-bottom">
           © 2026 Doctor Mold Pro. All Rights Reserved.
         </p>

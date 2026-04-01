@@ -67,7 +67,7 @@ export function SchemaMarkup() {
       aggregateRating: {
         '@type': 'AggregateRating',
         ratingValue: '5.0',
-        reviewCount: '3',
+        reviewCount: '5',
         bestRating: '5',
         worstRating: '1',
       },
@@ -76,7 +76,19 @@ export function SchemaMarkup() {
         businessConfig.social.linkedin,
         businessConfig.social.bbb,
       ],
+      knowsAbout: [
+        'Mold remediation',
+        'Mold inspection',
+        'Mold testing',
+        'Black mold removal',
+        'Water damage and mold',
+        'Indoor air quality',
+      ],
     }
+
+    const bayAreaServed = ['Tampa', 'St. Petersburg', 'Clearwater', 'Brandon', 'Riverview'].map(
+      (name) => ({ '@type': 'City', name }),
+    )
 
     // Service Schema for Mold Testing
     const moldTestingSchema = {
@@ -93,12 +105,9 @@ export function SchemaMarkup() {
           addressRegion: businessConfig.address.state,
         },
       },
-      areaServed: {
-        '@type': 'City',
-        name: 'Tampa',
-      },
+      areaServed: bayAreaServed,
       description:
-        'Certified mold testing and inspection services in Tampa, FL. Fast, reliable results with IICRC-certified professionals.',
+        'Certified mold testing and mold inspection in Tampa Bay, FL—including Clearwater, St. Petersburg, Brandon, and Riverview. Lab-backed results for homeowners and insurers.',
     }
 
     // Service Schema for Mold Removal
@@ -116,12 +125,9 @@ export function SchemaMarkup() {
           addressRegion: businessConfig.address.state,
         },
       },
-      areaServed: {
-        '@type': 'City',
-        name: 'Tampa',
-      },
+      areaServed: bayAreaServed,
       description:
-        'Professional mold removal and remediation services in Tampa, FL. IICRC-certified, veteran-owned, with Mold-Free Warranty.',
+        'Professional mold remediation and mold removal in Tampa, FL and Tampa Bay. Florida DBPR licensed, NORMI and IICRC certified, veteran-owned, with written warranty on remediation.',
     }
 
     // FAQPage Schema
@@ -134,7 +140,7 @@ export function SchemaMarkup() {
           name: 'What are the first signs of mold?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Musty odors, discoloration on walls or ceilings, water stains, and allergy-like symptoms indoors are common early warning signs.',
+            text: 'Musty smells, stains or bubbling paint, water marks, and allergy-like symptoms that get worse indoors. You might also see spots on grout, drywall, or around vents.',
           },
         },
         {
@@ -142,7 +148,7 @@ export function SchemaMarkup() {
           name: 'How dangerous is mold?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Mold exposure can trigger asthma, allergies, and respiratory irritation—especially for children, seniors, and people with weakened immune systems.',
+            text: 'It varies by person and type, but mold can irritate lungs, trigger allergies, and make asthma worse. Kids, older adults, and anyone immune-compromised should take extra care.',
           },
         },
         {
@@ -150,7 +156,7 @@ export function SchemaMarkup() {
           name: 'When should I get professional mold testing?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: "If you've had recent water damage, smell persistent mustiness, or see suspicious growth, professional testing is recommended to confirm type and extent.",
+            text: 'After any water intrusion, if you smell persistent mustiness, see suspicious growth, or need documentation for insurance or a home sale. Testing tells you what you are dealing with instead of guessing.',
           },
         },
         {
@@ -158,15 +164,15 @@ export function SchemaMarkup() {
           name: 'Is remediation covered by insurance?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Many policies cover mold caused by sudden, accidental water damage like a burst pipe, but long-term leaks or neglect are often excluded. We provide insurance-ready documentation.',
+            text: 'Often yes for sudden damage like a burst pipe if you act fast. Slow leaks or maintenance issues are harder. We provide clear reports and photos your adjuster can use.',
           },
         },
         {
           '@type': 'Question',
-          name: 'How can I prevent mold from coming back?',
+          name: 'How do I keep mold from coming back?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Keep humidity below 50%, repair leaks quickly, use dehumidifiers in damp spaces, and schedule periodic inspections in high-risk areas such as attics and crawlspaces.',
+            text: 'Fix leaks, control humidity (often below 50% indoors), run dehumidifiers in damp rooms, and do not ignore small wet spots.',
           },
         },
         {
@@ -174,7 +180,7 @@ export function SchemaMarkup() {
           name: 'What makes Doctor Mold Pro different?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: "We're NORMI and IICRC certified, Florida DBPR licensed, veteran-owned, and we back our work with a Mold-Free Warranty and transparent, easy-to-read reports.",
+            text: 'Florida-licensed mold assessors and remediators, NORMI and IICRC trained, veteran-owned, and local to Tampa Bay. Written plan, warranty on remediation work, and real humans who answer the phone.',
           },
         },
       ],

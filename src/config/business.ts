@@ -1,11 +1,5 @@
 /**
- * Business Information Configuration
- * 
- * TODO: Update with actual business details before deployment
- * This file contains NAP (Name, Address, Phone) data used for:
- * - JSON-LD structured data
- * - Schema markup
- * - Contact information display
+ * Business information (NAP) for JSON-LD, schema markup, and on-site contact display.
  */
 
 export const businessConfig = {
@@ -19,21 +13,21 @@ export const businessConfig = {
     formatted: '+1-813-776-5200', // International format
   },
   
-  // Address (TODO: Verify actual business address)
   address: {
-    street: 'Tampa, FL 33607', // TODO: Add full street address if available
+    street: '3315 W Pine St',
     city: 'Tampa',
     state: 'FL',
     zipCode: '33607',
     country: 'US',
-    // Full formatted address for schema
-    full: 'Tampa, FL 33607, USA',
+    /** Single-line for display (footer, contact) */
+    line: '3315 W Pine St, Tampa, FL 33607',
+    /** Full formatted address for schema and legal text */
+    full: '3315 W Pine St, Tampa, FL 33607, USA',
   },
   
-  // Geographic coordinates (TODO: Get actual coordinates)
   geo: {
-    latitude: 27.9506, // Tampa approximate - TODO: Update with exact location
-    longitude: -82.4572,
+    latitude: 27.9582,
+    longitude: -82.4995,
   },
   
   // Business Hours (TODO: Verify actual hours)

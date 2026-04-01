@@ -45,6 +45,23 @@ export function MobileNav() {
 
       <nav className={`mobile-nav ${isOpen ? 'is-open' : ''}`} aria-label="Mobile navigation">
         <div className="mobile-nav-content">
+          <a
+            href="tel:8137765200"
+            className="mobile-nav-phone"
+            onClick={() => {
+              trackEvent({
+                category: 'CTA',
+                action: 'click_mobile_nav_call',
+                label: 'Mobile nav',
+              })
+              handleLinkClick()
+            }}
+          >
+            Call (813) 776-5200
+          </a>
+          <Link to="/" onClick={handleLinkClick}>
+            Home
+          </Link>
           <Link to="/#services" onClick={handleLinkClick}>
             Services
           </Link>

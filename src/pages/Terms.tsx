@@ -1,5 +1,6 @@
 import { PageMeta } from '../components/PageMeta'
 import { getCanonicalUrl } from '../config/seo'
+import { businessConfig } from '../config/business'
 
 function Terms() {
   return (
@@ -91,7 +92,7 @@ function Terms() {
           <ul className="bullet-list" style={{ marginTop: '1rem' }}>
             <li><strong>Phone:</strong> <a href="tel:8137765200" style={{ color: '#7dd3fc' }}>(813) 776-5200</a></li>
             <li><strong>Email:</strong> Contact through our website contact form</li>
-            <li><strong>Address:</strong> Tampa, FL 33607</li>
+            <li><strong>Address:</strong> {businessConfig.address.line}</li>
           </ul>
         </div>
 

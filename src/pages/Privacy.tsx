@@ -1,4 +1,5 @@
 import { PageMeta } from '../components/PageMeta'
+import { businessConfig } from '../config/business'
 import { getCanonicalUrl } from '../config/seo'
 
 function Privacy() {
@@ -101,6 +102,8 @@ function Privacy() {
           </p>
           <p>
             Doctor Mold Pro LLC
+            <br />
+            Address: {businessConfig.address.line}
             <br />
             Phone: <a href="tel:8137765200">(813) 776-5200</a>
             <br />

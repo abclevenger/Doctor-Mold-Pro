@@ -1,4 +1,5 @@
 import { PageMeta } from '../components/PageMeta'
+import { businessConfig } from '../config/business'
 import { getCanonicalUrl } from '../config/seo'
 
 export function Accessibility() {
@@ -103,6 +104,8 @@ export function Accessibility() {
           </p>
           <p>
             <strong>Doctor Mold Pro LLC</strong>
+            <br />
+            Address: {businessConfig.address.line}
             <br />
             Phone: <a href="tel:8137765200">(813) 776-5200</a>
             <br />

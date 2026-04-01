@@ -1,32 +1,26 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { trackEvent } from '../utils/analytics'
+import { businessConfig } from '../config/business'
 
 export function MobileStickyCTA() {
   const [isVisible, setIsVisible] = useState(false)
   const [isDismissed, setIsDismissed] = useState(false)
 
   useEffect(() => {
-    // Only show on mobile devices
-    const checkMobile = () => {
-      const isMobile = window.innerWidth < 768
-      setIsVisible(isMobile && !isDismissed)
+    const updateVisibility = () => {
+      const isMobile = window.innerWidth < 1024
+      const scrolled = window.scrollY > 180
+      setIsVisible(isMobile && scrolled && !isDismissed)
     }
 
-    checkMobile()
-    window.addEventListener('resize', checkMobile)
-
-    // Show after user scrolls down a bit
-    const handleScroll = () => {
-      if (window.scrollY > 300 && !isDismissed) {
-        setIsVisible(true)
-      }
-    }
-
-    window.addEventListener('scroll', handleScroll)
+    updateVisibility()
+    window.addEventListener('resize', updateVisibility)
+    window.addEventListener('scroll', updateVisibility, { passive: true })
 
     return () => {
-      window.removeEventListener('resize', checkMobile)
-      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', updateVisibility)
+      window.removeEventListener('scroll', updateVisibility)
     }
   }, [isDismissed])
 
@@ -34,12 +28,12 @@ export function MobileStickyCTA() {
     setIsDismissed(true)
     setIsVisible(false)
     // Store dismissal in sessionStorage so it doesn't reappear this session
-    sessionStorage.setItem('mobileCTA dismissed', 'true')
+    sessionStorage.setItem('dmp_mobile_cta_dismissed', '1')
   }
 
   useEffect(() => {
     // Check if user already dismissed this session
-    if (sessionStorage.getItem('mobileCTA dismissed') === 'true') {
+    if (sessionStorage.getItem('dmp_mobile_cta_dismissed') === '1') {
       setIsDismissed(true)
       setIsVisible(false)
     }
@@ -57,6 +51,7 @@ export function MobileStickyCTA() {
       >
         ×
       </button>
+      <p className="mobile-sticky-cta-label">Need help now?</p>
       <div className="mobile-sticky-cta-content">
         <a
           href="tel:8137765200"
@@ -78,13 +73,14 @@ export function MobileStickyCTA() {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
+            aria-hidden="true"
           >
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
           </svg>
-          Call Now
+          Call {businessConfig.phone.display}
         </a>
-        <a
-          href="/mold-testing-appointment"
+        <Link
+          to="/mold-testing-appointment"
           className="mobile-sticky-cta-button secondary"
           onClick={() =>
             trackEvent({
@@ -103,11 +99,12 @@ export function MobileStickyCTA() {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
+            aria-hidden="true"
           >
             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
           </svg>
-          Book Online
-        </a>
+          Book online
+        </Link>
       </div>
     </div>
   )

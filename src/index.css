@@ -39,4 +39,5 @@ a {
 button {
   font-family: inherit;
   cursor: pointer;
+  touch-action: manipulation; /* Faster taps on mobile; avoids 300ms delay on older browsers */
 }

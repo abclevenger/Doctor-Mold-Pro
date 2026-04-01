@@ -1,43 +1,36 @@
 import { Link } from 'react-router-dom'
 import { PageMeta } from '../components/PageMeta'
 import { getCanonicalUrl } from '../config/seo'
+import { businessConfig } from '../config/business'
 import { ContactForm } from '../components/ContactForm'
+import { TrustBar } from '../components/TrustBar'
 import { trackEvent } from '../utils/analytics'
 
 export function Home() {
   return (
     <>
       <PageMeta
-        title="Mold Testing & Removal in Tampa, FL | Doctor Mold Pro"
-        description="Certified mold testing and removal in Tampa, FL. Fast inspections, IICRC-certified remediation, 24/7 emergency service. Free consultations. Call (813) 776-5200."
+        title="Mold Remediation Tampa FL | Inspection & Testing | Doctor Mold Pro"
+        description="Licensed mold remediation, mold inspection & mold testing in Tampa, St. Petersburg &amp; Clearwater. FL DBPR licensed. Emergency mold removal. Call (813) 776-5200 for a fast response."
         canonical={getCanonicalUrl('/')}
+        keywords="mold remediation Tampa, mold removal Tampa, mold inspection Tampa, mold testing Tampa, black mold removal Tampa, mold remediation near me, Tampa Bay mold company"
       />
       <section className="hero">
           <div className="hero-inner">
             <div className="hero-content">
-              <p className="eyebrow">Certified Mold Testing &amp; Remediation Services in Tampa</p>
-              <h1>Don&apos;t Let Mold Take Over.</h1>
+              <p className="eyebrow">Tampa Bay · Mold inspection, testing &amp; remediation</p>
+              <h1>
+                Mold remediation &amp; mold inspection for Tampa, FL &amp; Tampa Bay homes &amp; businesses
+              </h1>
               <p className="hero-subtitle">
-                Fast, certified, and trusted mold inspection, testing, and removal for Tampa homes
-                and businesses.
+                Worried about musty air, a leak, or spots on a wall? We respond fast, find what&apos;s
+                really going on, and give you a clear plan—so your home is safer, stress goes down, and
+                you have paperwork if insurance or a buyer needs it.
               </p>
               <div className="hero-actions">
-                <Link
-                  to="/mold-testing-appointment"
-                  className="primary button-link"
-                  onClick={() =>
-                    trackEvent({
-                      category: 'CTA',
-                      action: 'click_hero_schedule_consultation',
-                      label: 'Home hero',
-                    })
-                  }
-                >
-                  Schedule a Consultation
-                </Link>
                 <a
                   href="tel:8137765200"
-                  className="secondary button-link"
+                  className="primary button-link hero-cta-call"
                   onClick={() =>
                     trackEvent({
                       category: 'CTA',
@@ -46,32 +39,51 @@ export function Home() {
                     })
                   }
                 >
-                  Call Now
+                  Call {businessConfig.phone.display}
                 </a>
+                <Link
+                  to="/mold-testing-appointment"
+                  className="secondary button-link"
+                  onClick={() =>
+                    trackEvent({
+                      category: 'CTA',
+                      action: 'click_hero_book_inspection',
+                      label: 'Home hero',
+                    })
+                  }
+                >
+                  Book an inspection online
+                </Link>
               </div>
+              <p className="hero-microcopy">
+                <Link to="/#contact" className="hero-microcopy-link">
+                  Prefer email?
+                </Link>{' '}
+                Send a short note—we usually respond the same business day.
+              </p>
               <div className="hero-badges">
                 <div className="badge">
                   <span className="badge-label">Google</span>
                   <span className="badge-value">5.0</span>
                   <span className="badge-stars">★★★★★</span>
                 </div>
-                <p className="badge-note">Fully backed by Google Guarantee</p>
-                <p className="badge-note">Licensed MRSA4767 / MRSR4762 • NORMI &amp; IICRC Certified</p>
+                <p className="badge-note">FL DBPR licensed · NORMI &amp; IICRC · 12-month mold-free warranty on remediation</p>
                 <div className="veteran-badge">
                   <img
                     src="/veteran-owned-badge.png"
-                    alt="Veteran Owned Business"
-                    width="120"
-                    height="120"
+                    alt="Veteran owned mold remediation company serving Tampa Bay, Florida"
+                    width="100"
+                    height="100"
                     loading="lazy"
                   />
                 </div>
               </div>
             </div>
             <div className="hero-media">
+              {/* Visual credibility: real crew / equipment on site strengthens trust vs. generic stock */}
               <img
                 src="/inspection-living-room.png"
-                alt="Technician performing mold inspection in a Tampa living room"
+                alt="Certified mold inspection and moisture assessment in a Tampa, Florida area home"
                 loading="eager"
                 width="600"
                 height="400"
@@ -80,56 +92,16 @@ export function Home() {
           </div>
         </section>
 
-        <section className="section" id="about">
-          <h2>Meet the Founder &amp; CEO</h2>
-          <p className="section-lead">
-            Welcome to Doctor Mold Pro, where your health and home are our top priorities. Founded
-            by Ari Figueroa, we specialize in safeguarding your environment from the dangers of
-            mold with expert inspection, testing, and remediation services.
-          </p>
-
-          <div className="founder-section">
-            <div className="founder-image-wrapper">
-              <img
-                src="/ari-figueroa-headshot.png"
-                alt="Ari Figueroa, Founder & CEO of Doctor Mold Pro"
-                className="founder-headshot"
-                width="300"
-                height="300"
-                loading="lazy"
-              />
-              <div className="veteran-badge-inline">
-                <img
-                  src="/veteran-owned-badge.png"
-                  alt="Veteran Owned Business"
-                  width="100"
-                  height="100"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-            <div className="founder-content">
-              <h3>Our Mission</h3>
-              <p>
-                Ari and our dedicated team are committed to delivering comprehensive mold detection
-                and remediation solutions that exceed industry standards, ensuring your peace of
-                mind and long‑term well‑being.
-              </p>
-              <h3>Why homeowners trust Doctor Mold Pro</h3>
-              <ul className="bullet-list">
-                <li>Expert leadership from a seasoned, certified mold professional</li>
-                <li>Comprehensive services from inspections to personalized remediation plans</li>
-                <li>Customer‑centric approach rooted in safety, clarity, and integrity</li>
-                <li>Advanced technology for precise testing and long‑lasting results</li>
-                <li>Veteran-owned business committed to excellence and service</li>
-              </ul>
-            </div>
-          </div>
-
-        </section>
+        <TrustBar />
 
         <section id="services" className="section services">
-          <h2>Our Testing Services Include:</h2>
+          <h2>Mold inspection, testing &amp; remediation services in Tampa Bay</h2>
+          <p className="section-lead">
+            From <Link to="/mold-removal-tampa">mold removal in Tampa</Link> to{' '}
+            <Link to="/mold-testing-clearwater">mold testing in Clearwater</Link> and{' '}
+            <Link to="/emergency-mold-remediation-tampa">emergency mold remediation</Link> after water
+            damage—we match the right scope so you don&apos;t pay for the wrong fix.
+          </p>
           <div className="grid">
             <div className="card">
               <h3>Residential Mold Inspections</h3>
@@ -167,173 +139,169 @@ export function Home() {
               </Link>
             </div>
           </div>
-          <div style={{ marginTop: '2rem', textAlign: 'center' }}>
-            <Link to="/mold-testing-tampa" className="primary button-link">
-              Learn More About Mold Testing
+          <div className="section-cta-row">
+            <Link
+              to="/mold-testing-tampa"
+              className="secondary button-link"
+              onClick={() =>
+                trackEvent({ category: 'CTA', action: 'click_services_testing_hub', label: 'Home services' })
+              }
+            >
+              Mold testing hub (Tampa Bay)
+            </Link>
+            <Link
+              to="/mold-testing-appointment"
+              className="primary button-link"
+              onClick={() =>
+                trackEvent({ category: 'CTA', action: 'click_services_book', label: 'Home services' })
+              }
+            >
+              Book an inspection
             </Link>
           </div>
         </section>
 
-        <section className="section copy-block">
-          <div className="two-column">
-            <div>
-              <h2>Mold isn&apos;t always visible, but it&apos;s never harmless.</h2>
-              <p>
-                Even hidden mold can impact your air quality, your property, and your health. At
-                Doctor Mold Pro, we offer comprehensive mold testing and inspection services
-                tailored for Tampa&apos;s climate and construction.
-              </p>
-            </div>
-            <div>
-              <p>
-                Using advanced equipment—like infrared cameras, air quality monitors, and lab-tested
-                surface samples—we find mold where others miss it. From visible growth to hidden
-                leaks, we track the source and build a treatment plan that lasts.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="section highlight">
-          <h2>Fast. Certified. Trusted.</h2>
+        <section className="section" id="about">
+          <h2>Why Tampa homeowners call us first</h2>
           <p className="section-lead">
-            Mold spreads quickly in Florida&apos;s warm, humid climate—especially in places like
-            Tampa. We act fast to protect your health and your home with expert mold testing and
-            remediation services.
-          </p>
-        </section>
-
-        <section className="section" id="pricing">
-          <h2>Certified Mold Testing Packages</h2>
-          <p className="section-lead">
-            Accurate testing backed by certified labs — with clear, upfront pricing and results in
-            as little as 48 hours.
+            Doctor Mold Pro is led by Ari Figueroa—a certified mold professional focused on clear
+            answers, honest scopes, and work that holds up. We&apos;re local, licensed, and built for
+            Florida humidity and insurance realities.
           </p>
 
-          <div className="pricing-grid">
-            <article className="pricing-card">
-              <h3>Essential Package</h3>
-              <p className="pricing-price">$249</p>
-              <p className="pricing-tagline">Peace of mind testing for your home.</p>
-              <ul>
-                <li>Complete visual inspection</li>
-                <li>Professional moisture detection scan</li>
-                <li>2 air quality samples (interior vs. exterior baseline)</li>
-                <li>Thermal imaging of suspected areas</li>
-                <li>Lab analysis by certified third-party lab</li>
-                <li>Detailed digital report within 48 hours</li>
-                <li>Expert consultation on findings</li>
+          <div className="founder-section">
+            <div className="founder-image-wrapper">
+              <img
+                src="/ari-figueroa-headshot.png"
+                alt="Ari Figueroa, Founder & CEO of Doctor Mold Pro"
+                className="founder-headshot"
+                width="300"
+                height="300"
+                loading="lazy"
+              />
+              <div className="veteran-badge-inline">
+                <img
+                  src="/veteran-owned-badge.png"
+                  alt="Veteran Owned Business"
+                  width="100"
+                  height="100"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+            <div className="founder-content">
+              <h3>What you get</h3>
+              <ul className="bullet-list">
+                <li>
+                  Straight talk: we explain what the lab results mean for your family and your property—no
+                  scare tactics.
+                </li>
+                <li>
+                  Full path from inspection and testing to remediation and clearance—no juggling random
+                  contractors.
+                </li>
+                <li>
+                  Documentation you can hand to insurance or a buyer: photos, chain of custody, and
+                  written protocols when needed.
+                </li>
+                <li>
+                  Tools that match the job—infrared, moisture mapping, and lab-backed sampling when
+                  hidden mold is suspected.
+                </li>
+                <li>Veteran-owned crew with the same urgency we&apos;d want for our own homes.</li>
               </ul>
-              <Link to="/mold-testing-appointment" className="primary pricing-cta button-link">
-                Get Started
-              </Link>
-            </article>
-
-            <article className="pricing-card featured">
-              <div className="badge-pill">Most Popular</div>
-              <h3>Comprehensive Package</h3>
-              <p className="pricing-price">$399</p>
-              <p className="pricing-tagline">
-                Deep diagnostics with HVAC &amp; surface sampling — ideal if mold is suspected.
-              </p>
-              <ul>
-                <li>4 total air samples</li>
-                <li>2 surface samples from visible growth areas</li>
-                <li>HVAC inspection &amp; testing</li>
-                <li>Crawl space / attic moisture mapping</li>
-                <li>Same-day emergency service</li>
-                <li>Insurance-ready documentation</li>
-                <li>30-day follow-up consultation</li>
-                <li>Remediation protocol if mold detected</li>
-              </ul>
-              <Link to="/mold-testing-appointment" className="primary pricing-cta button-link">
-                Get Started
-              </Link>
-            </article>
-
-            <article className="pricing-card">
-              <h3>Premium Protection</h3>
-              <p className="pricing-price">$599</p>
-              <p className="pricing-tagline">Complete property health assessment.</p>
-              <ul>
-                <li>6 air samples</li>
-                <li>3 surface samples</li>
-                <li>VOC testing, bacteria &amp; allergen screening</li>
-                <li>Moisture intrusion &amp; behind-wall cavity inspection</li>
-                <li>Post-remediation verification testing (within 90 days)</li>
-                <li>Priority same-day service</li>
-                <li>1-year mold prevention consultation</li>
-              </ul>
-              <Link to="/mold-testing-appointment" className="primary pricing-cta button-link">
-                Get Started
-              </Link>
-            </article>
-
-            <article className="pricing-card">
-              <h3>Commercial / Multi-Unit</h3>
-              <p className="pricing-price">Custom</p>
-              <p className="pricing-tagline">
-                Tailored testing programs for businesses, HOAs, and landlords.
-              </p>
-              <ul>
-                <li>Multi-unit discounted rates</li>
-                <li>Flexible / after-hours scheduling</li>
-                <li>Bulk testing discounts</li>
-                <li>Annual inspection programs</li>
-                <li>Tenant-ready documentation</li>
-                <li>ADA &amp; OSHA compliance reporting</li>
-              </ul>
-              <Link to="/#contact" className="secondary pricing-cta button-link">
-                Request Custom Quote
-              </Link>
-            </article>
+            </div>
           </div>
+
+        </section>
+
+        <section className="section signs-section" id="signs-of-mold">
+          <h2>Signs you may have a mold problem</h2>
+          <p className="section-lead">
+            In Tampa Bay, humidity and small leaks hide behind walls and in HVAC systems. If any of
+            this sounds familiar, call sooner—not later.
+          </p>
+          <div className="two-column signs-two-col">
+            <ul className="bullet-list">
+              <li>Musty or earthy odor that won&apos;t go away after cleaning</li>
+              <li>Allergy symptoms indoors that improve when you leave</li>
+              <li>Water stains, bubbling paint, or warped trim</li>
+              <li>Recent pipe leak, roof leak, or flood—even if it &quot;dried out&quot;</li>
+            </ul>
+            <ul className="bullet-list">
+              <li>Visible spots or fuzzy growth on drywall, grout, or registers</li>
+              <li>Condensation on windows or chronically damp closets or crawlspaces</li>
+              <li>Buying or selling a home and you want independent documentation</li>
+              <li>Insurance asked for proof of damage or professional assessment</li>
+            </ul>
+          </div>
+          <p className="signs-footer">
+            We use moisture meters, thermal imaging, and lab testing when needed—so you&apos;re not
+            guessing.
+          </p>
         </section>
 
         <section className="section" id="process">
-          <h2>Our Proven 5-Step Mold Testing &amp; Treatment Process</h2>
-          <p className="section-lead" style={{ marginBottom: '2rem' }}>
-            <Link to="/mold-remediation-process" style={{ color: '#7dd3fc' }}>
-              Learn more about our detailed remediation process →
+          <h2>How we work—from first call to clearance</h2>
+          <p className="section-lead process-lead">
+            One team, one plan. No runaround.{' '}
+            <Link to="/mold-remediation-process" className="inline-link">
+              See the full remediation workflow →
             </Link>
           </p>
           <ol className="process-list">
             <li>
-              <h3>Step 1: Inspect &amp; Detect</h3>
-              <p>We scan for mold and moisture using advanced tools.</p>
+              <h3>Inspect &amp; map moisture</h3>
+              <p>
+                We walk the property with thermal imaging and moisture meters to find what&apos;s wet,
+                what&apos;s growing, and where hidden mold may be traveling (including HVAC).
+              </p>
             </li>
             <li>
-              <h3>Step 2: Sample &amp; Test</h3>
-              <p>We collect samples and send them to a certified lab.</p>
+              <h3>Sample &amp; lab test</h3>
+              <p>
+                Air and surface samples go to an independent lab when needed. You get clear results
+                you can use for health decisions, insurance, or a home sale.
+              </p>
             </li>
             <li>
-              <h3>Step 3: Plan &amp; Quote</h3>
-              <p>You&apos;ll get a clear plan with up-front pricing.</p>
+              <h3>Plan &amp; upfront scope</h3>
+              <p>
+                You&apos;ll see a written plan with pricing before remediation starts—no surprise add-ons
+                for standard mold work.
+              </p>
             </li>
             <li>
-              <h3>Step 4: Remove &amp; Restore</h3>
-              <p>We safely remove mold and repair affected areas.</p>
+              <h3>Remove &amp; dry safely</h3>
+              <p>
+                Containment, HEPA filtration, and proper removal per Florida rules—not just
+                &quot;spray and pray.&quot;
+              </p>
             </li>
             <li>
-              <h3>Step 5: Re-Test &amp; Verify</h3>
-              <p>We test again to ensure your home is mold-free.</p>
+              <h3>Clearance &amp; documentation</h3>
+              <p>
+                Post-remediation verification when appropriate, plus photos and reports you can file
+                away with confidence.
+              </p>
             </li>
           </ol>
         </section>
 
-        <section className="section warranty">
-          <h2>Our Mold-Free Warranty</h2>
+        <section className="section warranty" id="warranty">
+          <h2>12-month mold-free warranty on remediation</h2>
           <p>
-            We stand by our work with a 12-month Mold-Free Guarantee. If mold returns in the
-            treated area due to improper remediation, we&apos;ll return and fix it—free of charge.
+            If mold comes back in the treated area because remediation wasn&apos;t done right, we come
+            back and fix it—on us. (New leaks and new water damage aren&apos;t covered—mold needs a dry
+            home to stay gone.)
           </p>
         </section>
 
         <section className="section certifications-section" id="certifications">
-          <h2>Certified Mold Experts &amp; Accreditations</h2>
+          <h2>Licenses &amp; certifications—not just a truck and a sprayer</h2>
           <p className="section-lead">
-            Doctor Mold Pro is backed by industry‑leading training, state licensing, and
-            third‑party certifications—so you know your home or business is in qualified hands.
+            Florida DBPR mold assessor &amp; remediator licenses, NORMI and IICRC training, and
+            documentation that holds up with insurers and buyers.
           </p>
 
           <div className="certifications-grid">
@@ -497,130 +465,153 @@ export function Home() {
         </section>
 
         <section className="section" id="case-studies">
-          <h2>Our Case Studies: Mold Solved</h2>
-          <div className="grid">
-            <article className="card">
-              <h3>Hidden Mold in a South Tampa Townhome</h3>
-              <p className="case-label">Problem</p>
-              <p>A homeowner noticed a musty odor but didn&apos;t see any visible mold.</p>
-              <p className="case-label">Solution</p>
-              <p>
-                We started with a full <strong>inspection and air quality test</strong>. <strong>As a result</strong>, we discovered
-                mold growth inside the HVAC system—completely hidden from view.
-              </p>
-              <p className="case-label">The Outcome</p>
-              <p>
-                We removed the mold, sanitized the ducts, and performed post-remediation testing. <strong>Afterward</strong>, the air quality improved, and the odor was gone. <strong>Since then</strong>, the homeowner has scheduled annual mold checks for peace of mind.
-              </p>
-            </article>
-
-            <article className="card">
-              <h3>Black Mold in a Downtown Tampa Office</h3>
-              <p className="case-label">Problem</p>
-              <p>
-                Employees were reporting allergy-like symptoms, including coughing and eye
-                irritation. No one suspected mold.
-              </p>
-              <p className="case-label">Solution</p>
-              <p>
-                We conducted air and surface testing. <strong>Soon after</strong>, we found black mold behind a
-                leaking wall near the break room.
-              </p>
-              <p className="case-label">The Outcome</p>
-              <p>
-                We removed the affected materials and cleaned the area using EPA-approved methods.
-                <strong>To avoid business disruption</strong>, we completed the work outside normal business hours. <strong>As a result</strong>, staff returned to a safer, cleaner workspace with no further symptoms.
-              </p>
-            </article>
-
-            <article className="card">
-              <h3>Post-Flood Mold in a Carrollwood Bathroom</h3>
-              <p className="case-label">Problem</p>
-              <p>
-                A pipe burst under the sink, soaking the drywall and cabinetry. Mold was visible
-                within 48 hours.
-              </p>
-              <p className="case-label">Solution</p>
-              <p>
-                We performed emergency mold removal and moisture mapping. <strong>In addition</strong>, we removed
-                damaged drywall and treated the framing with an antimicrobial solution.
-              </p>
-              <p className="case-label">The Outcome</p>
-              <p>
-                Final air testing confirmed the mold was gone. <strong>To help with insurance</strong>, we provided
-                full documentation and a written clearance report. <strong>Most importantly</strong>, the client now feels confident in the safety of their bathroom.
-              </p>
-            </article>
-          </div>
-        </section>
-
-        <section className="section">
-          <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-            <img
-              src="/service-van.png"
-              alt="Doctor Mold Pro service van"
-              className="van-image"
-              loading="lazy"
-              width="600"
-              height="450"
-            />
-          </div>
-        </section>
-
-        <section className="section" id="faq">
-          <h2>Mold FAQs</h2>
+          {/* Photo ops: add real before/after cavity, HVAC plenum, bathroom tear-out — replaces text-only proof */}
+          <h2>Real Tampa Bay jobs—problem, fix, outcome</h2>
           <p className="section-lead">
-            Straightforward answers to the most common questions Tampa homeowners ask about mold
-            testing, inspection, and removal.
+            Brief examples of what we see in the field. Every house is different; we document yours
+            the same way.
           </p>
           <div className="grid">
             <article className="card">
-              <h3>What are the first signs of mold?</h3>
+              <h3>Hidden mold in a South Tampa townhome</h3>
+              <p className="case-label">Problem</p>
+              <p>Musty odor—no visible mold.</p>
+              <p className="case-label">What we did</p>
               <p>
-                Musty odors, discoloration on walls or ceilings, water stains, and allergy‑like
-                symptoms indoors are common early warning signs.
+                Full inspection plus air testing. Mold was growing inside the HVAC system, hidden
+                from view.
               </p>
-              <h3>How dangerous is mold?</h3>
+              <p className="case-label">Outcome</p>
               <p>
-                Mold exposure can trigger asthma, allergies, and respiratory irritation—especially
-                for children, seniors, and people with weakened immune systems.
+                Removed growth, sanitized ducts, clearance testing. Odor gone; homeowner now books
+                annual checks.
               </p>
             </article>
+
             <article className="card">
-              <h3>When should I get professional mold testing?</h3>
+              <h3>Black mold in a downtown Tampa office</h3>
+              <p className="case-label">Problem</p>
+              <p>Staff coughing and irritated eyes—no one guessed mold.</p>
+              <p className="case-label">What we did</p>
+              <p>Air and surface testing located mold behind a leaking wall by the break room.</p>
+              <p className="case-label">Outcome</p>
               <p>
-                If you&apos;ve had recent water damage, smell persistent mustiness, or see suspicious
-                growth, professional testing is recommended to confirm type and extent.
-              </p>
-              <h3>Is remediation covered by insurance?</h3>
-              <p>
-                Many policies cover mold caused by sudden, accidental water damage like a burst
-                pipe, but long‑term leaks or neglect are often excluded. We provide
-                insurance‑ready documentation.
+                Removed affected materials per protocol; worked after hours so the business kept
+                running. Symptoms stopped.
               </p>
             </article>
+
             <article className="card">
-              <h3>How can I prevent mold from coming back?</h3>
+              <h3>Post-flood mold in a Carrollwood bathroom</h3>
+              <p className="case-label">Problem</p>
+              <p>Pipe burst; mold on drywall within 48 hours.</p>
+              <p className="case-label">What we did</p>
+              <p>Emergency removal, drying, antimicrobial treatment on framing.</p>
+              <p className="case-label">Outcome</p>
               <p>
-                Keep humidity below 50%, repair leaks quickly, use dehumidifiers in damp spaces, and
-                schedule periodic inspections in high‑risk areas such as attics and crawlspaces.
-              </p>
-              <h3>What makes Doctor Mold Pro different?</h3>
-              <p>
-                We&apos;re NORMI and IICRC certified, Florida DBPR licensed, veteran‑owned, and we
-                back our work with a Mold‑Free Warranty and transparent, easy‑to‑read reports.
+                Clearance testing passed. Full paperwork for the insurance claim.
               </p>
             </article>
-          </div>
-          <div style={{ marginTop: '2rem', textAlign: 'center' }}>
-            <Link to="/signs-of-mold-in-house" className="secondary button-link">
-              Read More FAQs About Mold
-            </Link>
           </div>
         </section>
 
-        <section className="section testimonials">
-          <h2>What Our Clients Say</h2>
+        <section className="section" id="pricing">
+          <h2>Certified mold testing packages</h2>
+          <p className="section-lead">
+            Independent lab analysis, clear reports, and results in as little as 48 hours. Pick a
+            package below or call—we&apos;ll steer you to the right scope.
+          </p>
+
+          <div className="pricing-grid">
+            <article className="pricing-card">
+              <h3>Essential Package</h3>
+              <p className="pricing-price">$249</p>
+              <p className="pricing-tagline">Peace of mind testing for your home.</p>
+              <ul>
+                <li>Complete visual inspection</li>
+                <li>Professional moisture detection scan</li>
+                <li>2 air quality samples (interior vs. exterior baseline)</li>
+                <li>Thermal imaging of suspected areas</li>
+                <li>Lab analysis by certified third-party lab</li>
+                <li>Detailed digital report within 48 hours</li>
+                <li>Expert consultation on findings</li>
+              </ul>
+              <Link to="/mold-testing-appointment" className="primary pricing-cta button-link">
+                Book this package
+              </Link>
+            </article>
+
+            <article className="pricing-card featured">
+              <div className="badge-pill">Most Popular</div>
+              <h3>Comprehensive Package</h3>
+              <p className="pricing-price">$399</p>
+              <p className="pricing-tagline">
+                Deep diagnostics with HVAC &amp; surface sampling — ideal if mold is suspected.
+              </p>
+              <ul>
+                <li>4 total air samples</li>
+                <li>2 surface samples from visible growth areas</li>
+                <li>HVAC inspection &amp; testing</li>
+                <li>Crawl space / attic moisture mapping</li>
+                <li>Same-day emergency service</li>
+                <li>Insurance-ready documentation</li>
+                <li>30-day follow-up consultation</li>
+                <li>Remediation protocol if mold detected</li>
+              </ul>
+              <Link to="/mold-testing-appointment" className="primary pricing-cta button-link">
+                Book this package
+              </Link>
+            </article>
+
+            <article className="pricing-card">
+              <h3>Premium Protection</h3>
+              <p className="pricing-price">$599</p>
+              <p className="pricing-tagline">Complete property health assessment.</p>
+              <ul>
+                <li>6 air samples</li>
+                <li>3 surface samples</li>
+                <li>VOC testing, bacteria &amp; allergen screening</li>
+                <li>Moisture intrusion &amp; behind-wall cavity inspection</li>
+                <li>Post-remediation verification testing (within 90 days)</li>
+                <li>Priority same-day service</li>
+                <li>1-year mold prevention consultation</li>
+              </ul>
+              <Link to="/mold-testing-appointment" className="primary pricing-cta button-link">
+                Book this package
+              </Link>
+            </article>
+
+            <article className="pricing-card">
+              <h3>Commercial / Multi-Unit</h3>
+              <p className="pricing-price">Custom</p>
+              <p className="pricing-tagline">
+                Tailored testing programs for businesses, HOAs, and landlords.
+              </p>
+              <ul>
+                <li>Multi-unit discounted rates</li>
+                <li>Flexible / after-hours scheduling</li>
+                <li>Bulk testing discounts</li>
+                <li>Annual inspection programs</li>
+                <li>Tenant-ready documentation</li>
+                <li>ADA &amp; OSHA compliance reporting</li>
+              </ul>
+              <Link to="/#contact" className="secondary pricing-cta button-link">
+                Request Custom Quote
+              </Link>
+            </article>
+          </div>
+          <p className="pricing-footer-hint">
+            Not sure which package fits? Call{' '}
+            <a href="tel:8137765200">{businessConfig.phone.display}</a>—we&apos;ll match you to the right
+            test before you spend money on the wrong scope.
+          </p>
+        </section>
+
+        <section className="section testimonials" id="reviews">
+          <h2>What Tampa Bay homeowners say</h2>
+          <p className="section-lead">
+            Real jobs. Real reviews. We ask clients to be honest—good or bad.
+          </p>
           <div className="grid">
             <article className="card">
               <p className="stars">★★★★★</p>
@@ -684,7 +675,7 @@ export function Home() {
                 &quot;Great company with professional services very satisfied with my experience. Highly recommend pricing very reasonable.&quot;
               </p>
               <div className="testimonial-footer">
-                <div className="testimonial-avatar" style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'rgba(148, 163, 184, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#e5e7eb', fontSize: '0.875rem', fontWeight: '600' }}>
+                <div className="testimonial-avatar testimonial-avatar-initials" aria-hidden>
                   JV
                 </div>
                 <p className="author">Jose Velasquez</p>
@@ -696,7 +687,7 @@ export function Home() {
                 &quot;Doctor Mold Pro came to my brother&apos;s house in South Tampa and was able to eradicate the mold from his home. Ari, the owner was very professional and knowledgeable of what needed to be done. It was taken care of in a timely manner. I was so happy that I used Doctor Mold Pro and know that the work was professionally done. I would highly recommend Doctor Mold Pro without hesitation.&quot;
               </p>
               <div className="testimonial-footer">
-                <div className="testimonial-avatar" style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'rgba(148, 163, 184, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#e5e7eb', fontSize: '0.875rem', fontWeight: '600' }}>
+                <div className="testimonial-avatar testimonial-avatar-initials" aria-hidden>
                   BF
                 </div>
                 <p className="author">BarBara FitzPatrick</p>
@@ -705,20 +696,156 @@ export function Home() {
           </div>
         </section>
 
+        <section className="section service-areas-section" id="service-areas">
+          <h2>Mold remediation &amp; testing across Tampa Bay cities</h2>
+          <p className="section-lead">
+            Local crew, fast dispatch. Same-day appointments when the schedule allows—call early if
+            you&apos;re dealing with active water or spreading mold.
+          </p>
+          <ul className="service-areas-grid">
+            <li>
+              <Link to="/mold-testing-tampa">Tampa mold testing</Link>
+            </li>
+            <li>
+              <Link to="/mold-removal-tampa">Tampa mold removal</Link>
+            </li>
+            <li>
+              <Link to="/mold-testing-st-petersburg">St. Petersburg mold testing</Link>
+            </li>
+            <li>
+              <Link to="/mold-removal-st-petersburg">St. Petersburg mold removal</Link>
+            </li>
+            <li>
+              <Link to="/mold-testing-clearwater">Clearwater mold testing</Link>
+            </li>
+            <li>
+              <Link to="/mold-removal-clearwater">Clearwater mold removal</Link>
+            </li>
+            <li>
+              <Link to="/mold-testing-brandon">Brandon mold testing</Link>
+            </li>
+            <li>
+              <Link to="/mold-removal-brandon">Brandon mold removal</Link>
+            </li>
+            <li>
+              <Link to="/mold-testing-riverview">Riverview mold testing</Link>
+            </li>
+            <li>
+              <Link to="/mold-removal-riverview">Riverview mold removal</Link>
+            </li>
+            <li>
+              <Link to="/mold-removal-lutz">Lutz mold remediation</Link>
+            </li>
+            <li>
+              <Link to="/mold-removal-temple-terrace">Temple Terrace mold remediation</Link>
+            </li>
+            <li>
+              <Link to="/mold-removal-oldsmar">Oldsmar mold remediation</Link>
+            </li>
+            <li>
+              <Link to="/mold-removal-safety-harbor">Safety Harbor mold remediation</Link>
+            </li>
+            <li>
+              <Link to="/mold-removal-wesley-chapel">Wesley Chapel mold remediation</Link>
+            </li>
+          </ul>
+          <p className="service-areas-more">
+            Also serving Carrollwood, South Tampa, and nearby Hillsborough &amp; Pinellas
+            communities—ask if you&apos;re close to our route.
+          </p>
+          <div className="service-areas-van">
+            <img
+              src="/service-van.png"
+              alt="Doctor Mold Pro mold remediation and mold inspection service van in Tampa Bay, Florida"
+              className="van-image"
+              loading="lazy"
+              width="600"
+              height="450"
+            />
+          </div>
+        </section>
+
+        <section className="section faq-section" id="faq">
+          <h2>Mold questions Tampa homeowners ask us</h2>
+          <p className="section-lead">
+            Short answers. Call if your situation is urgent—we&apos;ll help you sort it out.
+          </p>
+          <div className="faq-list">
+            <details className="faq-item">
+              <summary>What are the first signs of mold?</summary>
+              <p>
+                Musty smells, stains or bubbling paint, water marks, and allergy-like symptoms that
+                get worse indoors. You might also see spots on grout, drywall, or around vents.
+              </p>
+            </details>
+            <details className="faq-item">
+              <summary>How dangerous is mold?</summary>
+              <p>
+                It varies by person and type, but mold can irritate lungs, trigger allergies, and
+                make asthma worse. Kids, older adults, and anyone immune-compromised should take
+                extra care.
+              </p>
+            </details>
+            <details className="faq-item">
+              <summary>When should I get professional mold testing?</summary>
+              <p>
+                After any water intrusion, if you smell persistent mustiness, see suspicious growth,
+                or need documentation for insurance or a home sale. Testing tells you what you&apos;re
+                dealing with instead of guessing.
+              </p>
+            </details>
+            <details className="faq-item">
+              <summary>Is remediation covered by insurance?</summary>
+              <p>
+                Often yes for sudden damage—like a burst pipe—if you act fast. Slow leaks or
+                maintenance issues are harder. We provide clear reports and photos your adjuster can
+                use.
+              </p>
+            </details>
+            <details className="faq-item">
+              <summary>How do I keep mold from coming back?</summary>
+              <p>
+                Fix leaks, control humidity (often below 50% indoors), run dehumidifiers in damp
+                rooms, and don&apos;t ignore small wet spots. We can point out trouble spots on your
+                property.
+              </p>
+            </details>
+            <details className="faq-item">
+              <summary>What makes Doctor Mold Pro different?</summary>
+              <p>
+                We&apos;re Florida-licensed mold assessors and remediators, NORMI and IICRC trained,
+                veteran-owned, and local to Tampa Bay. You get a written plan, a warranty on
+                remediation work, and real humans who answer the phone.
+              </p>
+            </details>
+          </div>
+          <div className="faq-more-link">
+            <Link to="/signs-of-mold-in-house" className="secondary button-link">
+              More mold warning signs &amp; tips →
+            </Link>
+          </div>
+        </section>
+
         <section className="section cta" id="contact">
           <div className="cta-inner">
             <div>
-              <h2>Schedule Your Tampa Mold Inspection Today</h2>
+              <h2>Call now or send a message</h2>
               <p>
-                Looking for a trusted team to handle your mold inspection, testing, or removal needs
-                in Tampa Bay? Our certified, licensed professionals are ready 24/7 with fast
-                response and clear answers.
+                Tell us what you&apos;re seeing, smelling, or dealing with—water damage, a musty room,
+                visible spots, or an insurance request. We&apos;ll tell you the fastest way to get
+                answers, usually same day.
+              </p>
+              <p className="cta-phone-hero">
+                <a href="tel:8137765200" className="cta-phone-link">
+                  {businessConfig.phone.display}
+                </a>
+                <span className="cta-phone-note"> · 24/7 emergency line</span>
               </p>
               <ul className="contact-info-list">
                 <li>
                   <strong>Phone:</strong>{' '}
                   <a href="tel:8137765200" style={{ color: '#7dd3fc', textDecoration: 'none' }}>
-                    (813) 776-5200
+                    {businessConfig.phone.display}
                   </a>
                 </li>
                 <li>
@@ -734,24 +861,25 @@ export function Home() {
                   <strong>Hours:</strong> 24/7 emergency response for water damage and visible mold.
                 </li>
                 <li>
-                  <strong>Location:</strong>{' '}
+                  <strong>Address:</strong>{' '}
                   <a
-                    href="https://maps.app.goo.gl/xTzn8iymy5Ut1TFk7"
+                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(businessConfig.address.line)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{ color: '#7dd3fc', textDecoration: 'none' }}
                   >
-                    Tampa, FL 33607
+                    {businessConfig.address.line}
                   </a>
                 </li>
               </ul>
               <p className="service-areas">
-                <strong>Not sure where to start?</strong>
-                Tell us what you&apos;re seeing, smelling, or experiencing and we&apos;ll recommend
-                the right inspection or testing package.
+                <strong>Prefer email?</strong> Use the form—include your ZIP and whether there&apos;s active
+                water. We&apos;ll call or email back fast.
               </p>
             </div>
-            <div>
+            <div className="contact-form-column">
+              <h3 className="contact-form-heading">Request a callback</h3>
+              <p className="contact-form-sub">2 minutes. No spam—we only use this to reach you about mold service.</p>
               <ContactForm />
             </div>
           </div>

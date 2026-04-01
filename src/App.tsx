@@ -17,6 +17,11 @@ import { MoldTestingBrandon } from './pages/MoldTestingBrandon'
 import { MoldRemovalBrandon } from './pages/MoldRemovalBrandon'
 import { MoldTestingRiverview } from './pages/MoldTestingRiverview'
 import { MoldRemovalRiverview } from './pages/MoldRemovalRiverview'
+import { MoldRemovalLutz } from './pages/MoldRemovalLutz'
+import { MoldRemovalTempleTerrace } from './pages/MoldRemovalTempleTerrace'
+import { MoldRemovalOldsmar } from './pages/MoldRemovalOldsmar'
+import { MoldRemovalSafetyHarbor } from './pages/MoldRemovalSafetyHarbor'
+import { MoldRemovalWesleyChapel } from './pages/MoldRemovalWesleyChapel'
 const MoldTypes = lazy(() => import('./pages/MoldTypes'))
 const MoldTypePage = lazy(() => import('./pages/MoldTypePage'))
 const ServicePage = lazy(() => import('./pages/ServicePage'))
@@ -76,6 +81,11 @@ function App() {
           <Route path="/mold-removal-brandon" element={<MoldRemovalBrandon />} />
           <Route path="/mold-testing-riverview" element={<MoldTestingRiverview />} />
           <Route path="/mold-removal-riverview" element={<MoldRemovalRiverview />} />
+          <Route path="/mold-removal-lutz" element={<MoldRemovalLutz />} />
+          <Route path="/mold-removal-temple-terrace" element={<MoldRemovalTempleTerrace />} />
+          <Route path="/mold-removal-oldsmar" element={<MoldRemovalOldsmar />} />
+          <Route path="/mold-removal-safety-harbor" element={<MoldRemovalSafetyHarbor />} />
+          <Route path="/mold-removal-wesley-chapel" element={<MoldRemovalWesleyChapel />} />
           {/* Mold types - lazy loaded */}
           <Route
             path="/mold-types"
